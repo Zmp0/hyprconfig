@@ -43,16 +43,6 @@ echo -e "${YELLOW}Extracting wallpapers → $WALLPAPER_DIR ${NC}" | $LOLCAT
 mkdir -p "$WALLPAPER_DIR"
 7z x "$ARCHIVE3" -o"$WALLPAPER_DIR" -y | $LOLCAT
 
-# 3. Handle ly folder
-if [[ -d "$LY_TEMP_DIR" ]]; then
-    echo -e "${YELLOW}Installing Ly display manager → /etc/ly ${NC}" | $LOLCAT
-    sudo rm -rf /etc/ly
-    sudo mv "$LY_TEMP_DIR" /etc/ly
-    echo -e "${GREEN}Ly installed successfully!${NC}" | $LOLCAT
-else
-    echo -e "${CYAN}No 'ly' folder found in archives${NC}" | $LOLCAT
-fi
-
 # 4. Install core packages
 echo -e "${YELLOW}"
 echo "Installing core Hyprland packages..."
@@ -68,6 +58,16 @@ sudo pacman -Syu --noconfirm --needed \
     noto-fonts-emoji eza nvim fzf 
 
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+
+# 3. Handle ly folder
+if [[ -d "$LY_TEMP_DIR" ]]; then
+    echo -e "${YELLOW}Installing Ly display manager → /etc/ly ${NC}" | $LOLCAT
+    sudo rm -rf /etc/ly
+    sudo mv "$LY_TEMP_DIR" /etc/ly
+    echo -e "${GREEN}Ly installed successfully!${NC}" | $LOLCAT
+else
+    echo -e "${CYAN}No 'ly' folder found in archives${NC}" | $LOLCAT
+fi
 
 # Final epic message
 echo -e "${GREEN}"
