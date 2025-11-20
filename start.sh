@@ -55,7 +55,8 @@ sudo pacman -Syu --noconfirm --needed \
     rofi firefox playerctl grim slurp hyprpicker \
     jq fyi fuzzel blueman pavucontrol-qt pamixer \
     ttf-firacode-nerd starship fastfetch btop htop fd bc cliphist bat \
-    noto-fonts-emoji eza nvim fzf 
+    noto-fonts-emoji eza nvim fzf gnome-session gnome-control-panel \
+    wayland \
 
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm
 
