@@ -57,7 +57,15 @@ sudo pacman -Syu --noconfirm --needed \
     ttf-firacode-nerd starship fastfetch btop htop fd bc cliphist bat \
     noto-fonts-emoji eza nvim fzf 
 
-git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm && cd .. && rm rf yay/
+
+sudo systemctl enable ly.service
+
+chsh -s/usr/bin/fish
+
+fc-cache -f
+
+cd /home/zz/.config/hypr/scripts/ && chmod +x calendar.sh grimblast.sh workspace_action.sh && chmod +x rofi/music/rofi-music
 
 # 3. Handle ly folder
 if [[ -d "$LY_TEMP_DIR" ]]; then
