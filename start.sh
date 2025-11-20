@@ -62,10 +62,12 @@ sudo pacman -Syu --noconfirm --needed \
     hyprland hypridle hyprlock hyprutils \
     foot fish thunar waybar ly swaync swww \
     polkit polkit-gnome wl-clipboard kdeconnect \
-    rofi firefox playerctl grim slurp hyprctl hyprpicker \
-    jq notify-send fuzzel blueman pavucontrol-qt pamixer \
+    rofi firefox playerctl grim slurp hyprpicker \
+    jq fyi fuzzel blueman pavucontrol-qt pamixer \
     ttf-firacode-nerd starship fastfetch btop htop fd bc cliphist bat \
-    noto-fonts-emojy eza nvim fzf NetworkManager 
+    noto-fonts-emoji eza nvim fzf 
+
+git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
 # Final epic message
 echo -e "${GREEN}"
