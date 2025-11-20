@@ -1,0 +1,2 @@
+# hyprconfig
+conf
