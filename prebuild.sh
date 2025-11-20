@@ -1,4 +1,7 @@
 #!/bin/bash
 
-sudo pacman -S --needed --noconfirm - < req.txt
+set -e
+
+sudo pacman -Syu --noconfirm --needed \
+	lolcat 7zip nano \
 chmod +x start.sh && bash start.sh

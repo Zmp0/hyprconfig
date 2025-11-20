@@ -43,7 +43,7 @@ echo -e "${YELLOW}Extracting wallpapers → $WALLPAPER_DIR ${NC}" | $LOLCAT
 mkdir -p "$WALLPAPER_DIR"
 7z x "$ARCHIVE3" -o"$WALLPAPER_DIR" -y | $LOLCAT
 
-# 4. Install core packages
+# 3. Install core packages
 echo -e "${YELLOW}"
 echo "Installing core Hyprland packages..."
 echo -e "${NC}" | $LOLCAT
@@ -57,7 +57,7 @@ sudo pacman -Syu --noconfirm --needed \
     ttf-firacode-nerd starship fastfetch btop htop fd bc cliphist bat \
     noto-fonts-emoji eza nvim fzf 
 
-git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm && cd .. && rm rf yay/
+git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm
 
 sudo systemctl enable ly.service
 
@@ -65,9 +65,10 @@ chsh -s/usr/bin/fish
 
 fc-cache -f
 
-cd /home/zz/.config/hypr/scripts/ && chmod +x calendar.sh grimblast.sh workspace_action.sh && chmod +x rofi/music/rofi-music
+cd /home/zz/.config/hypr/scripts/ && chmod +x calendar.sh grimblast.sh workspace_action.sh && chmod +x rofi/music/rofi-music && cd color_generation/ && 
+chmod +x switchwall.sh randomwall.sh
 
-# 3. Handle ly folder
+# 4. Handle ly folder
 if [[ -d "$LY_TEMP_DIR" ]]; then
     echo -e "${YELLOW}Installing Ly display manager → /etc/ly ${NC}" | $LOLCAT
     sudo rm -rf /etc/ly
