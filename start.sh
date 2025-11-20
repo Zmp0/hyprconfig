@@ -64,6 +64,8 @@ sudo pacman -Syu --noconfirm --needed \
     polkit polkit-gnome wl-clipboard kdeconnect \
     rofi firefox playerctl grim slurp hyprctl hyprpicker \
     jq notify-send fuzzel blueman pavucontrol-qt pamixer \
+    ttf-firacode-nerd starship fastfetch btop htop fd bc cliphist bat \
+    noto-fonts-emojy eza nvim fzf NetworkManager 
 
 # Final epic message
 echo -e "${GREEN}"
