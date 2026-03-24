@@ -50,16 +50,18 @@ echo -e "${NC}" | $LOLCAT
 
 sudo pacman -Syu --noconfirm --needed \
     hyprland hypridle hyprlock hyprutils \
-    foot fish thunar waybar ly swaync swww \
+    foot fish thunar waybar gdm swaync swww \
     polkit polkit-gnome wl-clipboard kdeconnect \
     rofi firefox playerctl grim slurp hyprpicker \
     jq fyi fuzzel blueman pavucontrol-qt pamixer \
     ttf-firacode-nerd starship fastfetch btop htop fd bc cliphist bat \
-    noto-fonts-emoji eza nvim fzf gnome-session wayland \
+    noto-fonts-emoji eza nvim fzf gnome-session wayland openbox obconf-qt \
 
-git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm
+#git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm
 
-sudo systemctl enable ly.service
+sudo systemctl enable gdm
+
+#sudo systemctl enable ly.service
 
 chsh -s/usr/bin/fish
 
@@ -69,20 +71,20 @@ cd /home/zz/.config/hypr/scripts/ && chmod +x calendar.sh grimblast.sh workspace
 chmod +x switchwall.sh randomwall.sh
 
 # 4. Handle ly folder
-if [[ -d "$LY_TEMP_DIR" ]]; then
-    echo -e "${YELLOW}Installing Ly display manager → /etc/ly ${NC}" | $LOLCAT
-    sudo rm -rf /etc/ly
-    sudo mv "$LY_TEMP_DIR" /etc/ly
-    echo -e "${GREEN}Ly installed successfully!${NC}" | $LOLCAT
-else
-    echo -e "${CYAN}No 'ly' folder found in archives${NC}" | $LOLCAT
-fi
+#if [[ -d "$LY_TEMP_DIR" ]]; then
+#    echo -e "${YELLOW}Installing Ly display manager → /etc/ly ${NC}" | $LOLCAT
+#    sudo rm -rf /etc/ly
+#    sudo mv "$LY_TEMP_DIR" /etc/ly
+#    echo -e "${GREEN}Ly installed successfully!${NC}" | $LOLCAT
+#else
+#    echo -e "${CYAN}No 'ly' folder found in archives${NC}" | $LOLCAT
+#fi
 
 # Final epic message
 echo -e "${GREEN}"
 echo "╔══════════════════════════════════════════════════════════╗"
 echo "║                  SETUP 100% COMPLETE!                    ║"
-echo "║      Configs ✓    Wallpapers ✓    Ly ✓    Packages ✓    ║"
+echo "║      Configs ✓    Wallpapers ✓    Gdm✓    Packages ✓   ║"
 echo "╚══════════════════════════════════════════════════════════╝"
 echo -e "${NC}" | $LOLCAT
 
